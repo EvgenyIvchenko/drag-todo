@@ -1,0 +1,21 @@
+.todo__item {
+  position: absolute;
+  cursor: grab;
+  min-width: 215px;
+  color: black;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.todo__item:active {
+  cursor: grabbing;
+}
+
+.delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
