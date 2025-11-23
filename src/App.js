@@ -40,6 +40,12 @@ function App() {
     setItems(items.filter((item) => item.id !== id));
   };
 
+  const updatePos = (data, index) => {
+    let newArray = [...items];
+    newArray[index].defaultPos = { x: data.x, y: data.y };
+    setItems(newArray);
+  };
+
   return (
     <div className="App">
       <div className="wrapper">
@@ -57,7 +63,13 @@ function App() {
       </div>
       {items.map((item, index) => {
         return (
-          <DraggableItem onDelete={deleteItemHandler} key={index} item={item} />
+          <DraggableItem
+            onDelete={deleteItemHandler}
+            key={index}
+            item={item}
+            index={index}
+            updatePos={updatePos}
+          />
         );
       })}
     </div>
