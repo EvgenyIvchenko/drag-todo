@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import Draggable from 'react-draggable';
 import './DraggableItem.css';
 
-const DraggableItem = ({ onDelete, item, updatePos, index }) => {
+const DraggableItem = ({ onDelete, item, updatePos }) => {
   const nodeRef = useRef(null);
 
   return (
@@ -10,7 +10,7 @@ const DraggableItem = ({ onDelete, item, updatePos, index }) => {
       nodeRef={nodeRef}
       defaultPosition={item.defaultPos}
       onStop={(_, data) => {
-        updatePos(data, index);
+        updatePos(data, item.id);
       }}
     >
       <div

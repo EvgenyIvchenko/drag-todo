@@ -40,10 +40,20 @@ function App() {
     setItems(items.filter((item) => item.id !== id));
   };
 
-  const updatePos = (data, index) => {
-    let newArray = [...items];
-    newArray[index].defaultPos = { x: data.x, y: data.y };
-    setItems(newArray);
+  const updatePos = (data, id) => {
+    setItems((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, defaultPos: { x: data.x, y: data.y } }
+          : item
+      )
+    );
+  };
+
+  const keyPress = (e) => {
+    if (e.key === 'Enter') {
+      newItem();
+    }
   };
 
   return (
@@ -55,19 +65,19 @@ function App() {
           onChange={(e) => {
             setItem(e.target.value);
           }}
+          onKeyDown={(e) => keyPress(e)}
           placeholder="Enter something..."
         />
         <button onClick={newItem} className="enter">
           Enter
         </button>
       </div>
-      {items.map((item, index) => {
+      {items.map((item) => {
         return (
           <DraggableItem
             onDelete={deleteItemHandler}
-            key={index}
+            key={item.id}
             item={item}
-            index={index}
             updatePos={updatePos}
           />
         );
