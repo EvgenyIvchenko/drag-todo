@@ -2,6 +2,7 @@
   "name": "drag-todo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://evgenyivchenko.github.io/drag-todo",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
