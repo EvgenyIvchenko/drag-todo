@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/drag-todo/static/css/main.55bb1117.css",
+    "main.js": "/drag-todo/static/js/main.8583dfa1.js",
+    "index.html": "/drag-todo/index.html",
+    "main.55bb1117.css.map": "/drag-todo/static/css/main.55bb1117.css.map",
+    "main.8583dfa1.js.map": "/drag-todo/static/js/main.8583dfa1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55bb1117.css",
+    "static/js/main.8583dfa1.js"
+  ]
+}
